@@ -8,10 +8,10 @@ Subject: [PATCH] HACK - Prevent activation emails.
  app/mailers/user_notifications.rb | 9 ---------
  1 file changed, 9 deletions(-)
 
-diff --git a/app/mailers/user_notifications.rb b/app/mailers/user_notifications.rb
+diff --git app/mailers/user_notifications.rb app/mailers/user_notifications.rb
 index c9cd1a03..0d7630a1 100644
---- a/app/mailers/user_notifications.rb
-+++ b/app/mailers/user_notifications.rb
+--- app/mailers/user_notifications.rb
++++ app/mailers/user_notifications.rb
 @@ -12,18 +12,9 @@ class UserNotifications < ActionMailer::Base
    include Email::BuildEmailHelper
  
