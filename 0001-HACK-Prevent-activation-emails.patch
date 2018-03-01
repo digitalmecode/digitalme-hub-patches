@@ -1,0 +1,36 @@
+From 8ce47daf4773e47b8f2615ecfaaf25d5663d3b40 Mon Sep 17 00:00:00 2001
+Message-Id: <8ce47daf4773e47b8f2615ecfaaf25d5663d3b40.1519900981.git.luke.horwell@digitalme.co.uk>
+From: Luke Horwell <luke.horwell@digitalme.co.uk>
+Date: Thu, 1 Mar 2018 10:42:54 +0000
+Subject: [PATCH] HACK - Prevent activation emails.
+
+---
+ app/mailers/user_notifications.rb | 9 ---------
+ 1 file changed, 9 deletions(-)
+
+diff --git a/app/mailers/user_notifications.rb b/app/mailers/user_notifications.rb
+index c9cd1a03..0d7630a1 100644
+--- a/app/mailers/user_notifications.rb
++++ b/app/mailers/user_notifications.rb
+@@ -12,18 +12,9 @@ class UserNotifications < ActionMailer::Base
+   include Email::BuildEmailHelper
+ 
+   def signup(user, opts = {})
+-    build_user_email_token_by_template(
+-      "user_notifications.signup",
+-      user,
+-      opts[:email_token]
+-    )
+   end
+ 
+   def signup_after_approval(user, opts = {})
+-    build_email(user.email,
+-                template: 'user_notifications.signup_after_approval',
+-                locale: user_locale(user),
+-                new_user_tips: I18n.t('system_messages.usage_tips.text_body_template', base_url: Discourse.base_url, locale: locale))
+   end
+ 
+   def notify_old_email(user, opts = {})
+-- 
+2.16.2
+
