@@ -1,6 +1,15 @@
 --- app/mailers/user_notifications.rb	2018-03-08 14:16:21.189754549 +0000
 +++ app/mailers/user_notifications.rb.2	2018-03-08 14:11:35.900805569 +0000
-@@ -376,7 +376,7 @@
+@@ -269,7 +269,7 @@
+       show_category_in_subject: true,
+       notification_type: "posted",
+       notification_data_hash: {
+-        original_username: post.user.username,
++        original_username: "Digitalme Hub",
+         topic_title: post.topic.title,
+       },
+     }
+@@ -344,7 +344,7 @@
      email_options = {
        title: notification_data[:topic_title],
        post: post,
