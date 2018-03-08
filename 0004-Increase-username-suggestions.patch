@@ -1,0 +1,18 @@
+--- spec/components/user_name_suggester_spec.rb	2018-03-08 14:28:37.064609564 +0000
++++ spec/components/user_name_suggester_spec.rb.1	2018-03-08 14:32:05.531093894 +0000
+@@ -5,13 +5,13 @@
+ 
+   describe 'name heuristics' do
+     it 'is able to guess a decent username from an email' do
+-      expect(UserNameSuggester.suggest('bob@bob.com')).to eq('bob')
++      expect(UserNameSuggester.suggest('foo@bar.com')).to eq('foo_bar')
+     end
+   end
+ 
+   describe '.suggest' do
+     before do
+-      User.stubs(:username_length).returns(3..15)
++      User.stubs(:username_length).returns(3..50)
+     end
+ 
+     it "doesn't raise an error on nil username" do
