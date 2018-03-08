@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "-------------------------------"
+echo "Start of Patches"
+echo "-------------------------------"
+
 cd $(dirname "$0")
 
 function doPatch() {
@@ -7,3 +11,8 @@ function doPatch() {
 }
 
 doPatch 0001-Prevent-activation-emails.patch /var/www/discourse/app/mailers/user_notifications.rb
+
+echo "-------------------------------"
+echo "End of Patches"
+echo "-------------------------------"
+
