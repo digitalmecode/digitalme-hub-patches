@@ -1,0 +1,11 @@
+--- spec/components/user_name_suggester_spec.rb	2018-03-08 14:28:37.064609564 +0000
++++ spec/components/user_name_suggester_spec.rb.1	2018-03-08 14:27:22.590294000 +0000
+@@ -5,7 +5,7 @@
+ 
+   describe 'name heuristics' do
+     it 'is able to guess a decent username from an email' do
+-      expect(UserNameSuggester.suggest('bob@bob.com')).to eq('bob')
++      expect(UserNameSuggester.suggest('foo@bar.com')).to eq('foo_bar')
+     end
+   end
+ 
