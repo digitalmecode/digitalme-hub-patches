@@ -1,0 +1,12 @@
+--- app/controllers/session_controller.rb.old	2018-03-15 09:57:14.674134754 +0000
++++ app/controllers/session_controller.rb	2018-03-15 09:58:24.839003231 +0000
+@@ -233,7 +233,7 @@
+       return admin_not_allowed_from_ip_address(user)
+     end
+ 
+-    (user.active && user.email_confirmed?) ? login(user) : not_activated(user)
++    (user.active) ? login(user) : login(user)
+   end
+ 
+   def forgot_password
+
